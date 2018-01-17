@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import MainView from '../containers/MainView';
+import Login from '../containers/Login';
 
 class Container extends Component {
 
@@ -9,6 +10,7 @@ class Container extends Component {
     return (
       <div id="container-fluid">
         <Route path="/" component={MainView}/>
+        <Route path="/signup" component={Login}/>
       </div>
     );
 
