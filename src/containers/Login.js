@@ -20,33 +20,47 @@ class Login extends Component {
   render() {
     return (
       <div className="login-view">
+
         <header>
-          <h1>Signup</h1>
+          <div className="header-div">
+            <h1>Signup</h1>
+          </div>
         </header>
-        <div className="form-group">
-          <label htmlFor="email-input">email:</label>
-          <div>
-            <input
-              className="form-control inputdefault"
-              type="text"
-              id="email-input"
-            />
+
+        <div className="col-md-3 inputs-container">
+
+          <div className="form-group">
+            <div>
+              <input
+                className="form-control inputdefault"
+                placeholder="Email address"
+                type="text"
+                id="email-input"
+              />
+            </div>
           </div>
-        </div>
-        <div className="form-group">
-          <label htmlFor="password-input">password:</label>
-          <div>
-            <input
-              className="form-control inputdefault"
-              type="text"
-              id="password-input"
-            />
+
+          <div className="form-group">
+            <div>
+              <input
+                className="form-control inputdefault"
+                placeholder="Password"
+                type="text"
+                id="password-input"
+              />
+            </div>
           </div>
+
         </div>
+
       </div>
     );
   }
 }
+
+Login.propTypes = {
+
+};
 
 /*const mapStateToProps = (state) => {
   return {
@@ -60,4 +74,4 @@ class Login extends Component {
   }, dispatch);
 };*/
 
-export default Login;
+export default connect(null, null)(Login);
