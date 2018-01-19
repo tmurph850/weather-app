@@ -8,13 +8,29 @@ class Login extends Component {
     super(props);
 
     this.state = {
-
+      email: "",
+      password: ""
     };
+
+    this.handleEmailInput = this.handleEmailInput.bind(this);
+    this.handlePasswordInput = this.handlePasswordInput.bind(this);
   }
 
   whichHeader() {
     // will decide which header to render
     // going to use output inside header
+  }
+
+  handleEmailInput(e) {
+    this.setState({
+      email: e.target.value
+    });
+  }
+
+  handlePasswordInput(e) {
+    this.setState({
+      password: e.target.value
+    });
   }
 
   render() {
@@ -36,6 +52,8 @@ class Login extends Component {
                 placeholder="Email address"
                 type="text"
                 id="email-input"
+                onChange={this.handleEmailInput}
+                value={this.state.email}
               />
             </div>
           </div>
@@ -47,6 +65,8 @@ class Login extends Component {
                 placeholder="Password"
                 type="text"
                 id="password-input"
+                onChange={this.handlePasswordInput}
+                value={this.state.password}
               />
             </div>
           </div>
