@@ -9,8 +9,8 @@ class Container extends Component {
 
     return (
       <div id="container-fluid">
-        <Route path="/" component={MainView}/>
-        <Route path="/signup" component={Login}/>
+        <Route exact path="/" component={MainView}/>
+        <Route exact path="/signup" component={Login}/>
       </div>
     );
 

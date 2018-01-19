@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const http = require('http');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const app = express();
 
@@ -18,6 +19,7 @@ let promise = mongoose.connect('mongodb://localhost/weatherapp', {
 
 // App Setup
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors());
 app.use(bodyParser.json());
 app.use(morgan('combined'));
 

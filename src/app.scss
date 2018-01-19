@@ -8,14 +8,18 @@ html, body {
 
 .login-view {
   .header-div {
+    display: block;
+    position: relative;
     margin: 0 auto;
+    top: 6rem;
     text-align: center;
   }
   .form-control {
-    width: auto;
+    width: 65%;
   }
   .inputs-container {
     margin: 0 auto;
+    top: 6.4rem;
   }
   .form-group {
     margin-bottom: 0;

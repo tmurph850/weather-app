@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { newSignUp } from '../actions/newSignup';
 
 class Login extends Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class Login extends Component {
 
     this.handleEmailInput = this.handleEmailInput.bind(this);
     this.handlePasswordInput = this.handlePasswordInput.bind(this);
+    this.requestSignUp = this.requestSignUp.bind(this);
   }
 
   whichHeader() {
@@ -33,15 +35,20 @@ class Login extends Component {
     });
   }
 
+  requestSignUp() {
+    let email = this.state.email;
+    let password = this.state.password;
+
+    this.props.newSignUp(email, password);
+  }
+
   render() {
     return (
       <div className="login-view">
 
-        <header>
-          <div className="header-div">
-            <h1>Signup</h1>
-          </div>
-        </header>
+        <div className="header-div">
+          <h1>Signup</h1>
+        </div>
 
         <div className="col-md-3 inputs-container">
 
@@ -71,6 +78,13 @@ class Login extends Component {
             </div>
           </div>
 
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={this.requestSignUp}>
+            Primary
+          </button>
+
         </div>
 
       </div>
@@ -79,19 +93,19 @@ class Login extends Component {
 }
 
 Login.propTypes = {
-
+  newSignUp: PropTypes.func.isRequired
 };
 
-/*const mapStateToProps = (state) => {
+const mapStateToProps = (state) => {
   return {
-
+    signUpResponse: state.signUpResponse
   };
-};*/
+};
 
-/*const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-
+    newSignUp: newSignUp
   }, dispatch);
-};*/
+};
 
-export default connect(null, null)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
