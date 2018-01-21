@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 
 class Nav extends Component {
   render() {
@@ -17,9 +16,6 @@ class Nav extends Component {
                 <span className="sr-only">(current)</span>
               </a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Link</a>
-            </li>
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Dropdown
@@ -30,9 +26,6 @@ class Nav extends Component {
                 <div className="dropdown-divider" />
                 <a className="dropdown-item" href="#">Something else here</a>
               </div>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link disabled" href="#">Disabled</a>
             </li>
           </ul>
           <form className="form-inline my-2 my-lg-0">
