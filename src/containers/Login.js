@@ -46,11 +46,11 @@ class Login extends Component {
     return (
       <div className="login-view">
 
-        <div className="header-div">
-          <h1>Signup</h1>
-        </div>
+        <div className="col-md-4 signup-block">
 
-        <div className="col-md-3 inputs-container">
+          <div className="header-div">
+            <h1>Signup</h1>
+          </div>
 
           <div className="form-group">
             <div>
@@ -78,12 +78,14 @@ class Login extends Component {
             </div>
           </div>
 
-          <button
-            type="button"
-            className="btn btn-primary"
-            onClick={this.requestSignUp}>
-            Primary
-          </button>
+            <div className="col-md-4 text-center button-container">
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={this.requestSignUp}>
+                Next
+              </button>
+            </div>
 
         </div>
 
