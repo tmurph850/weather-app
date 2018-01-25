@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 import { bindActionCreators } from 'redux';
 import { newSignUp } from '../actions/newSignup';
 
@@ -10,12 +11,25 @@ class Login extends Component {
 
     this.state = {
       email: "",
-      password: ""
+      password: "",
     };
 
     this.handleEmailInput = this.handleEmailInput.bind(this);
     this.handlePasswordInput = this.handlePasswordInput.bind(this);
     this.requestSignUp = this.requestSignUp.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if ( this.props.signUpResponse.length !== nextProps.signUpResponse.length ) {
+      if ( nextProps.signUpResponse[0] && nextProps.signUpResponse[0].status === "success" ) {
+        const { match, location, history } = this.props
+
+        const newLocation = {
+          pathname: '/'
+        };
+        history.push(newLocation)
+      }
+    }
   }
 
   whichHeader() {
@@ -110,4 +124,4 @@ const mapDispatchToProps = (dispatch) => {
   }, dispatch);
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));
