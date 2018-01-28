@@ -11,7 +11,7 @@ const app = express();
 
 // DB Setup
 //mongoose.connect('mongodb://localhost:auth/auth');
-let promise = mongoose.connect('mongodb://localhost/weatherapp', {
+let promise = mongoose.connect('mongodb://localhost/weather-app', {
   useMongoClient: true,
   /* other options */
 });
