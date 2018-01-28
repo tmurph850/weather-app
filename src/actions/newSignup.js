@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { NEW_SIGNUP } from './actionTypes';
+import { NEW_SIGNUP, AUTHENTICATE_USER } from './actionTypes';
 
 export const newSignUp = (email, password) => {
   const request = axios({
@@ -15,6 +15,10 @@ export const newSignUp = (email, password) => {
   return (dispatch) => {
     request.then(({data}) => {
       dispatch({type: NEW_SIGNUP, payload: data});
+      localStorage.setItem("token", data.token);
+      dispatch({type: AUTHENTICATE_USER, payload: "true"});
+    }).catch((error) => {
+      console.log(error);
     });
   };
 

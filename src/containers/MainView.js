@@ -28,7 +28,8 @@ MainView.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    weatherData: state.weatherData
+    weatherData: state.weatherData,
+    isUserAuthenticated: state.isUserAuthenticated
   };
 };
 

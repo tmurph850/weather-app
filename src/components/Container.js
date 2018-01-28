@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import MainView from '../containers/MainView';
-import Login from '../containers/Login';
+import SignUp from '../containers/SignUp';
 
 class Container extends Component {
 
@@ -10,7 +10,7 @@ class Container extends Component {
     return (
       <div id="container-fluid">
         <Route exact path="/" component={MainView}/>
-        <Route exact path="/signup" component={Login}/>
+        <Route exact path="/signup" component={SignUp}/>
       </div>
     );
 
