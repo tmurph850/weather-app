@@ -25,7 +25,7 @@ class SignUp extends Component {
         const { match, location, history } = this.props;
 
         const newLocation = {
-          pathname: '/'
+          pathname: '/welcome'
         };
         history.push(newLocation);
       }
@@ -53,9 +53,9 @@ class SignUp extends Component {
 
   render() {
     return (
-      <div className="login-view">
+      <div className="signup-view">
 
-        <div className="col-md-4 signup-block">
+        <div className="col-md-4 input-block">
 
           <div className="header-div">
             <h1>Signup</h1>
