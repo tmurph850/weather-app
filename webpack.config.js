@@ -58,6 +58,6 @@ module.exports = {
     ],
     externals: {
 
-  }
-    //devtool: 'source-map'
+  },
+    devtool: 'source-map'
 };

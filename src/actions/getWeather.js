@@ -1,12 +1,13 @@
 import axios from 'axios';
 import { GET_WEATHER } from './actionTypes';
+import { apiKey } from '../const/keys';
 
 
-export const getWeather = (cityId, apiKey) => {
+export const getWeather = (url) => {
 
   const request = axios({
     method: "get",
-    url: `http://api.openweathermap.org/data/2.5/forecast/daily?id=${cityId}&cnt=${16}&APPID=${apiKey}`,
+    url: `${url}&APPID=${apiKey}`,
     responseType: "json",
   });
 
