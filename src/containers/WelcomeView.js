@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import { getWeather } from '../actions/getWeather';
 import { currentWeatherUrl } from '../const/weatherUrls';
 import welcomeCities from '../const/welcomeCities';
+import icons from '../const/weatherIconsObject';
 
 class WelcomeView extends Component {
   constructor(props) {
@@ -12,7 +13,9 @@ class WelcomeView extends Component {
 
     this.state = {
       currentCity: "",
-      currentTime: ""
+      currentTime: "",
+      currentConditions: "",
+      currentIcon: ""
     };
 
     this.selectRandomCity = this.selectRandomCity.bind(this);
@@ -46,21 +49,62 @@ class WelcomeView extends Component {
 
     this.setState({
       currentCity: this.props.weatherData[latest].name,
-      currentTemp: this.convertToFahr(this.props.weatherData[latest].main.temp)
-    });
+      currentTemp: this.convertToFahr(this.props.weatherData[latest].main.temp),
+      currentConditions: this.props.weatherData[latest].weather[0].main
+    }, this.pickIcon);
+
   }
 
   convertToFahr(tempKel) {
     return Math.floor(tempKel * (9 / 5) - 459.67);
   }
 
+  pickIcon() {
+    let conditions = this.state.currentConditions;
+    let currentIcon;
+
+    switch (conditions) {
+      case "Clear":
+        currentIcon = icons.sunny;
+        break;
+      case "Clouds":
+        currentIcon = icons.cloudy;
+        break;
+      case "Rain":
+        currentIcon = icons.rain;
+        break;
+      case "Mist":
+        currentIcon = icons.rain;
+        break;
+      case "Snow":
+        currentIcon = icons.snow;
+        break;
+      default:
+        currentIcon = icons.sunny;
+
+    }
+
+    this.setState({
+      currentIcon: currentIcon
+    });
+
+  }
+
   render() {
     return (
-      <div className="container">
-        <div>{this.state.currentCity}</div>
-        <div>{this.state.currentTemp}&deg;</div>
-        <div><img src="/resources/img/29.svg"/></div>
-      </div>
+      <main>
+        <div className="welcome-card col-md-6">
+          <div className="welcome-city">
+            <p>{this.state.currentCity}</p>
+          </div>
+          <div className="welcomeImage-container">
+            <img src={this.state.currentIcon} className="welcome-image"/>
+          </div>
+          <div className="welcome-temp">
+            <p>{this.state.currentTemp}&deg;</p>
+          </div>
+        </div>
+      </main>
     );
   }
 
