@@ -44,7 +44,9 @@ const citiesArr = [
   "Jakarta",
   "Zagreb",
   "Dubrovnik",
-  "Reykjavik"
+  "Reykjavik",
+  "Key West",
+  "Islamorada"
 ];
 
 export default citiesArr;

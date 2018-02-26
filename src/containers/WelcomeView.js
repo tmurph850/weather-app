@@ -92,19 +92,23 @@ class WelcomeView extends Component {
 
   render() {
     return (
-      <main>
-        <div className="welcome-card col-md-6">
-          <div className="welcome-city">
-            <p>{this.state.currentCity}</p>
+      <div className="welcome-div">
+        <header>
+          <h1 className="welcome-city">{this.state.currentCity}</h1>
+        </header>
+        <hr className="welcome-divider"/>
+        <main>
+          <div className="welcome-card col-md-3">
+            <p className="welcome-conditions">{this.state.currentConditions}</p>
+            <div className="welcomeImage-container">
+              <img src={this.state.currentIcon} className="welcome-image"/>
+            </div>
+            <div className="welcome-temp">
+              <p>{this.state.currentTemp}&deg;</p>
+            </div>
           </div>
-          <div className="welcomeImage-container">
-            <img src={this.state.currentIcon} className="welcome-image"/>
-          </div>
-          <div className="welcome-temp">
-            <p>{this.state.currentTemp}&deg;</p>
-          </div>
-        </div>
-      </main>
+        </main>
+      </div>
     );
   }
 
