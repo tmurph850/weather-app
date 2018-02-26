@@ -112,7 +112,8 @@ html, body {
 }
 
 .welcome-divider {
-  width: 75%;
+  width: 82%;
+  margin-top: 0;
 }
 
 .welcome-card {
