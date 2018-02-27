@@ -6,6 +6,8 @@ html, body {
 
 body {
   //background-color: rgb(235, 235, 236);
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
 }
 
 .container-fluid {
@@ -114,12 +116,20 @@ body {
 .welcome-div {
   position: relative;
   min-height: 100%;
+  background-image: url("http://www.happycow.net/blog/wp-content/uploads/2014/07/barcelona-spain.jpg");
+  background-size: 100%;
+  background-position: center;
+  height: 100vh;
 }
 
 .welcome-city {
   text-align: center;
   padding: 22px;
-  font-size: 30px;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 900;
 }
 
 .welcome-divider {
