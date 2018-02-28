@@ -119,7 +119,6 @@ body {
   //background-image: url("https://upload.wikimedia.org/wikipedia/commons/1/11/Hawks-nest-hiking-trail_-_West_Virginia_-_ForestWander.jpg");
   background-size: cover;
   height: 100vh;
-  
 }
 
 .welcome-city {
@@ -148,6 +147,8 @@ body {
     margin-right: auto;
     max-width: 75%;
     max-height: 70%;
+    transition-delay: 1s;
+    transition-duration: 2s;
   }
 
   .welcome-temp {
@@ -156,6 +157,8 @@ body {
     font-size: 40px;
     font-weight: 900;
     margin-bottom: 0;
+    transition-delay: 1s;
+    transition-duration: 2s;
   }
 
   .welcome-conditions {
@@ -163,6 +166,8 @@ body {
     color: #fff;
     font-size: 30px;
     font-weight: 900;
+    transition-delay: 1s;
+    transition-duration: 2s;
   }
 
 }

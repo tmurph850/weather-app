@@ -135,6 +135,8 @@ html, body {
   margin-right: auto;
   max-width: 75%;
   max-height: 70%;
+  transition-delay: 1s;
+  transition-duration: 2s;
 }
 
 .welcome-card .welcome-temp {
@@ -143,6 +145,8 @@ html, body {
   font-size: 40px;
   font-weight: 900;
   margin-bottom: 0;
+  transition-delay: 1s;
+  transition-duration: 2s;
 }
 
 .welcome-card .welcome-conditions {
@@ -150,6 +154,8 @@ html, body {
   color: #fff;
   font-size: 30px;
   font-weight: 900;
+  transition-delay: 1s;
+  transition-duration: 2s;
 }
 
 /**

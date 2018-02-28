@@ -43,7 +43,7 @@ class WelcomeView extends Component {
 
 
   runSelectCity() {
-    window.setTimeout(this.selectRandomCity, 10000);
+    window.setTimeout(this.selectRandomCity, 8000);
   }
 
   selectRandomCity() {
