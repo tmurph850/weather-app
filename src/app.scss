@@ -6,8 +6,6 @@ html, body {
 
 body {
   //background-color: rgb(235, 235, 236);
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: bold;
 }
 
 .container-fluid {
@@ -116,10 +114,12 @@ body {
 .welcome-div {
   position: relative;
   min-height: 100%;
+  font-family: 'Source Sans Pro', sans-serif;
   //background-image: url("http://www.kinyu-z.net/data/wallpapers/57/900812.jpg");
   //background-image: url("https://upload.wikimedia.org/wikipedia/commons/1/11/Hawks-nest-hiking-trail_-_West_Virginia_-_ForestWander.jpg");
   background-size: cover;
   height: 100vh;
+  
 }
 
 .welcome-city {

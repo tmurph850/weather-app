@@ -32,7 +32,15 @@ class WelcomeView extends Component {
       this.updateCurrentCity();
     }
 
+    if ( this.props.weatherData.length > 1 ) {
+      let welcomeDiv = document.getElementsByClassName("welcome-div");
+      if ( welcomeDiv[0].style.trasitionDuration !== "3s" ) {
+        this.setTransition();
+      }
+    }
+
   }
+
 
   runSelectCity() {
     window.setTimeout(this.selectRandomCity, 10000);
@@ -99,6 +107,12 @@ class WelcomeView extends Component {
       currentIcon: currentIcon
     });
 
+  }
+
+  setTransition() {
+    let welcomeDiv = document.getElementsByClassName("welcome-div");
+    welcomeDiv[0].style.transitionDuration = "2s";
+    welcomeDiv[0].style.transitionDelay = "1s";
   }
 
   render() {
