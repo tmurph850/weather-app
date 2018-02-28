@@ -32,10 +32,6 @@ class WelcomeView extends Component {
       this.updateCurrentCity();
     }
 
-    if ( prevState.currentImage !== this.state.currentImage ) {
-      this.setBackGround();
-    }
-
   }
 
   runSelectCity() {
@@ -68,11 +64,6 @@ class WelcomeView extends Component {
       currentImage: currentImage
     }, this.pickIcon);
 
-  }
-
-  setBackGround() {
-  let welcomeDiv = document.getElementsByClassName("welcome-div");
-  welcomeDiv[0].style.backgroundImage = `url(${this.state.currentImage})`;
   }
 
   convertToFahr(tempKel) {
@@ -112,16 +103,17 @@ class WelcomeView extends Component {
 
   render() {
     return (
-      <div className="welcome-div">
+      <div className="welcome-div" style ={{ backgroundImage: `url(${this.state.currentImage})` }}>
         <header>
           <h1 className="welcome-city">{this.state.currentCity}</h1>
         </header>
         <main>
           <div className="welcome-card col-md-6">
-            <p className="welcome-temp">{this.state.currentTemp}&deg;</p>
             <div className="welcomeImage-container">
+              <p className="welcome-temp">{this.state.currentTemp}&deg;</p>
               <img src={this.state.currentIcon} className="welcome-image"/>
             </div>
+            <p className="welcome-conditions">{this.state.currentConditions}</p>
           </div>
         </main>
       </div>

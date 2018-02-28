@@ -117,7 +117,7 @@ body {
   position: relative;
   min-height: 100%;
   //background-image: url("http://www.kinyu-z.net/data/wallpapers/57/900812.jpg");
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/1/11/Hawks-nest-hiking-trail_-_West_Virginia_-_ForestWander.jpg");
+  //background-image: url("https://upload.wikimedia.org/wikipedia/commons/1/11/Hawks-nest-hiking-trail_-_West_Virginia_-_ForestWander.jpg");
   background-size: cover;
   height: 100vh;
 }
@@ -156,6 +156,13 @@ body {
     font-size: 40px;
     font-weight: 900;
     margin-bottom: 0;
+  }
+
+  .welcome-conditions {
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 900;
   }
 
 }
