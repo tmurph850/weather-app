@@ -15,14 +15,15 @@ class WelcomeView extends Component {
       currentCity: "",
       currentTime: "",
       currentConditions: "",
-      currentIcon: ""
+      currentIcon: "",
+      currentImage: ""
     };
 
     this.selectRandomCity = this.selectRandomCity.bind(this);
   }
 
   componentDidMount() {
-    this.props.getWeather(currentWeatherUrl + "Tallahassee");
+    this.selectRandomCity();
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -30,6 +31,11 @@ class WelcomeView extends Component {
       this.runSelectCity();
       this.updateCurrentCity();
     }
+
+    if ( prevState.currentImage !== this.state.currentImage ) {
+      this.setBackGround();
+    }
+
   }
 
   runSelectCity() {
@@ -40,19 +46,33 @@ class WelcomeView extends Component {
     let numberOfCities = welcomeCities.length;
     let randomCity = Math.floor( Math.random() * (numberOfCities - 0) + 0 );
 
-    return this.props.getWeather(currentWeatherUrl + welcomeCities[randomCity]);
+    return this.props.getWeather(currentWeatherUrl + welcomeCities[randomCity].city);
   }
 
   updateCurrentCity() {
     let len = this.props.weatherData.length;
     let latest = len - 1;
+    let currentCity = this.props.weatherData[latest].name;
+    let currentImage;
+
+    welcomeCities.some((city) => {
+      if ( currentCity === city.city ) {
+        currentImage = city.image;
+      }
+    });
 
     this.setState({
-      currentCity: this.props.weatherData[latest].name,
+      currentCity: currentCity,
       currentTemp: this.convertToFahr(this.props.weatherData[latest].main.temp),
-      currentConditions: this.props.weatherData[latest].weather[0].main
+      currentConditions: this.props.weatherData[latest].weather[0].main,
+      currentImage: currentImage
     }, this.pickIcon);
 
+  }
+
+  setBackGround() {
+  let welcomeDiv = document.getElementsByClassName("welcome-div");
+  welcomeDiv[0].style.backgroundImage = `url(${this.state.currentImage})`;
   }
 
   convertToFahr(tempKel) {
@@ -96,15 +116,11 @@ class WelcomeView extends Component {
         <header>
           <h1 className="welcome-city">{this.state.currentCity}</h1>
         </header>
-        <hr className="welcome-divider"/>
         <main>
-          <div className="welcome-card col-md-3">
-            <p className="welcome-conditions">{this.state.currentConditions}</p>
+          <div className="welcome-card col-md-6">
+            <p className="welcome-temp">{this.state.currentTemp}&deg;</p>
             <div className="welcomeImage-container">
               <img src={this.state.currentIcon} className="welcome-image"/>
-            </div>
-            <div className="welcome-temp">
-              <p>{this.state.currentTemp}&deg;</p>
             </div>
           </div>
         </main>
