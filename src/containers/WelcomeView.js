@@ -6,6 +6,7 @@ import { getWeather } from '../actions/getWeather';
 import { currentWeatherUrl } from '../const/weatherUrls';
 import welcomeCities from '../const/welcomeCities';
 import icons from '../const/weatherIconsObject';
+import { convertToFahr } from '../const/utilities';
 
 class WelcomeView extends Component {
   constructor(props) {
@@ -67,15 +68,11 @@ class WelcomeView extends Component {
 
     this.setState({
       currentCity: currentCity,
-      currentTemp: this.convertToFahr(this.props.weatherData[latest].main.temp),
+      currentTemp: convertToFahr(this.props.weatherData[latest].main.temp),
       currentConditions: this.props.weatherData[latest].weather[0].main,
       currentImage: currentImage
     }, this.pickIcon);
 
-  }
-
-  convertToFahr(tempKel) {
-    return Math.floor(tempKel * (9 / 5) - 459.67);
   }
 
   pickIcon() {
