@@ -48,6 +48,7 @@ class Dash extends Component {
             <tbody>
               <TableRow
                 weatherData={this.props.weatherData[0]}
+                icons={icons}
               />
             </tbody>
           </table>
