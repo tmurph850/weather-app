@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getWeather } from '../actions/getWeather';
 import icons from '../const/weatherIconsObject';
-import { sixteenDayUrl } from '../const/weatherUrls';
+import { dailyUrl } from '../const/weatherUrls';
 import TableRow from '../components/TableRow';
 
 class Dash extends Component {
@@ -20,7 +20,7 @@ class Dash extends Component {
 
   componentDidMount() {
     let location = this.state.userLocation;
-    return this.props.getWeather(`${sixteenDayUrl}${this.state.userLocation}&mode=json&cnt=16`);
+    return this.props.getWeather(`${dailyUrl}${this.state.userLocation}&mode=json&cnt=15`);
   }
 
   componentDidUpdate(prevProps, prevState) {

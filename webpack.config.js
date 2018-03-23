@@ -10,7 +10,7 @@ const config = {
       filename: 'app.js',
       path: path.resolve(__dirname, 'dist')
     },
-    devtool: 'inline-source-map',
+    //devtool: 'inline-source-map',
     devServer: {
       contentBase: './dist',
       hot: true,
@@ -59,7 +59,7 @@ const config = {
         // Load a custom template (lodash by default see the FAQ for details)
         template: './public/index.html'
       }),
-     new webpack.NamedModulesPlugin(),
+     //new webpack.NamedModulesPlugin(),
      new webpack.HotModuleReplacementPlugin()
     ]
 };

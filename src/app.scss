@@ -185,11 +185,25 @@ html, body {
     margin: 0 auto;
     text-align: center;
     margin-top: 12px;
+    font-weight: 300;
   }
 
   hr {
     width: 70%;
   }
+
+  .table-icon {
+    width: 10%;
+  }
+
+  .table td, .table th {
+    width: 24%;
+  }
+
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #fff;
+  }
+
 }
 
 /**

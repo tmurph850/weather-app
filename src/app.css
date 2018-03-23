@@ -169,10 +169,23 @@ html, body {
   margin: 0 auto;
   text-align: center;
   margin-top: 12px;
+  font-weight: 300;
 }
 
 .dash-container hr {
   width: 70%;
+}
+
+.dash-container .table-icon {
+  width: 10%;
+}
+
+.dash-container .table td, .dash-container .table th {
+  width: 24%;
+}
+
+.dash-container .table-striped tbody tr:nth-of-type(odd) {
+  background-color: #fff;
 }
 
 /**
