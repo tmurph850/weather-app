@@ -10,11 +10,11 @@ const config = {
       filename: 'app.js',
       path: path.resolve(__dirname, 'dist')
     },
-    //devtool: 'inline-source-map',
+    devtool: 'inline-source-map',
     devServer: {
       contentBase: './dist',
       hot: true,
-      port: 9000,
+      port: 8080,
       historyApiFallback: true,
       publicPath: '/',
       proxy: {

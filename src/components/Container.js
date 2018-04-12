@@ -12,6 +12,7 @@ class Container extends Component {
       <div id="container-fluid">
         <Route exact path="/" component={WelcomeView}/>
         <Route exact path="/signup" component={SignUp}/>
+        <Route exact path="/login" component={SignUp}/>
         <Route exact path="/dashboard" component={Dash}/>
       </div>
     );

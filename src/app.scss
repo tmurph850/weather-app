@@ -192,6 +192,12 @@ html, body {
     width: 70%;
   }
 
+  .table {
+    max-width: 85%;
+    width: 85%;
+    margin: 0 auto;
+  }
+
   .table-icon {
     width: 10%;
   }
@@ -202,6 +208,12 @@ html, body {
 
   .table-striped tbody tr:nth-of-type(odd) {
     background-color: #fff;
+  }
+
+  @media (max-width: 700px) {
+    .table-icon {
+      width: 40%;
+    }
   }
 
 }
