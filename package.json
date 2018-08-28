@@ -40,7 +40,9 @@
   },
   "scripts": {
     "compress": "node npm-tasks/compressImages.js",
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "build": "webpack",
+    "prod": "webpack --env production"
   },
   "repository": {
     "type": "git",
