@@ -41,12 +41,11 @@ const config = {
                 options: {
                     'presets': [
                         [
-                            'env', {
+                            '@babel/preset-env', {
                                 'modules': false
                             }
                         ],
-                        'stage-2',
-                        'react',
+                        '@babel/preset-react'
                     ]
                 }
             }

@@ -4,6 +4,7 @@
   "description": "Weather app, built with react and redux.",
   "main": "index.js",
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "imagemin": "^6.0.0",
     "imagemin-svgo": "^7.0.0",
@@ -17,11 +18,11 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
     "css-loader": "^1.0.0",
     "eslint": "^5.4.0",
     "eslint-plugin-import": "^2.14.0",
