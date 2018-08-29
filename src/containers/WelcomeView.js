@@ -114,7 +114,7 @@ class WelcomeView extends Component {
 
   render() {
     return (
-      <div className="welcome-div" style ={{ backgroundImage: `url(${this.state.currentImage})` }}>
+      <div className="welcome-div">
         <header>
           <h1 className="welcome-city">{this.state.currentCity}</h1>
         </header>

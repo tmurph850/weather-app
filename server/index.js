@@ -10,11 +10,7 @@ const app = express();
 
 
 // DB Setup
-//mongoose.connect('mongodb://localhost:auth/auth');
-let promise = mongoose.connect('mongodb://localhost/weather-app', {
-  useMongoClient: true,
-  /* other options */
-});
+mongoose.connect('mongodb://localhost/weather-app', { useNewUrlParser: true});
 
 
 // App Setup

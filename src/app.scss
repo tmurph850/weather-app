@@ -111,9 +111,6 @@ html, body {
   position: relative;
   min-height: 100%;
   font-family: 'Source Sans Pro', sans-serif;
-  //background-image: url("http://www.kinyu-z.net/data/wallpapers/57/900812.jpg");
-  //background-image: url("https://upload.wikimedia.org/wikipedia/commons/1/11/Hawks-nest-hiking-trail_-_West_Virginia_-_ForestWander.jpg");
-  background-size: cover;
   height: 100vh;
 }
 
@@ -121,7 +118,7 @@ html, body {
   text-align: center;
   padding: 22px;
   font-size: 2.6rem;
-  color: white;
+  color: black;
   text-align: center;
   text-transform: uppercase;
   font-weight: 900;
@@ -150,7 +147,7 @@ html, body {
 
   .welcome-temp {
     text-align: center;
-    color: #fff;
+    color: #000;
     font-size: 40px;
     font-weight: 900;
     margin-bottom: 0;
@@ -160,7 +157,7 @@ html, body {
 
   .welcome-conditions {
     text-align: center;
-    color: #fff;
+    color: #000;
     font-size: 30px;
     font-weight: 900;
     transition-delay: 1s;
